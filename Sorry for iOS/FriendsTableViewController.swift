@@ -21,6 +21,9 @@ class FriendsTableViewController: UITableViewController {
     
     // search controller
     let searchController = UISearchController(searchResultsController: nil)
+    
+    // local array for flatui colors
+    var flatUIColors: [String] = ["1abc9c", "16a085", "f1c40f", "f39c12", "2ecc71", "27ae60", "e67e22", "d35400", "3498db", "2980b9", "e74c3c", "c0392b", "9b59b6", "8e44ad", "34495e", "2c3e50"]
 
     override func viewDidLoad() {
         // load superview
@@ -41,6 +44,7 @@ class FriendsTableViewController: UITableViewController {
         // define properties for tableview
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.separatorStyle = .None
     }
 
     override func didReceiveMemoryWarning() {
@@ -113,11 +117,17 @@ class FriendsTableViewController: UITableViewController {
         // adjust properties of label
         cell.friendName.adjustsFontSizeToFitWidth = true
         
+        // adjust cell color
+        cell.backgroundColor = UIColor(hex: flatUIColors[Int(arc4random_uniform(UInt32(flatUIColors.count)))])
+        
         // return properly configured cell
         return cell
     }
     
-    didSele
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // deselect the selected row instead of preserving animation
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 }
 
 /* class extensions for search feature */
