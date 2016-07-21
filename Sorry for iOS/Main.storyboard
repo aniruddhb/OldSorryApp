@@ -121,20 +121,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" id="ZZl-xa-42j" customClass="FriendTableViewCell" customModule="Sorry_for_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="100" id="ZZl-xa-42j" customClass="FriendTableViewCell" customModule="Sorry_for_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZZl-xa-42j" id="PEC-5O-V8F">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Person Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2Q-av-Jll">
-                                            <rect key="frame" x="10" y="9" width="582" height="25"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2Q-av-Jll">
+                                            <rect key="frame" x="163" y="37" width="275" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="275" id="4LP-OF-8hW"/>
+                                                <constraint firstAttribute="width" constant="584" id="Y6G-gO-lbG"/>
+                                                <constraint firstAttribute="width" constant="319" id="hld-kC-Yjc"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Y6G-gO-lbG"/>
+                                                    <exclude reference="hld-kC-Yjc"/>
+                                                </mask>
+                                            </variation>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="l2Q-av-Jll" secondAttribute="bottom" constant="37" id="FsX-MI-Qso"/>
+                                        <constraint firstItem="l2Q-av-Jll" firstAttribute="top" secondItem="PEC-5O-V8F" secondAttribute="top" constant="37" id="G3W-Np-aEc"/>
+                                        <constraint firstItem="l2Q-av-Jll" firstAttribute="centerX" secondItem="PEC-5O-V8F" secondAttribute="centerX" id="Ge0-Ev-7Mg"/>
+                                        <constraint firstItem="l2Q-av-Jll" firstAttribute="centerY" secondItem="PEC-5O-V8F" secondAttribute="centerY" id="zXf-x7-baK"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="friendName" destination="l2Q-av-Jll" id="ldj-vg-nJ0"/>

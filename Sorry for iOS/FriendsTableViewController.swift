@@ -33,10 +33,14 @@ class FriendsTableViewController: UITableViewController {
         loadFriendsIntoTableView()
         
         // define parameters for searchcontroller
-        searchController.searchResultsUpdater = self as? UISearchResultsUpdating
+        searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         self.tableView.tableHeaderView = searchController.searchBar
+        
+        // define properties for tableview
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,6 +97,7 @@ class FriendsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> FriendTableViewCell {
+        // grab cell with identifier
         let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as! FriendTableViewCell
 
         // if user isn't searching, return data from full array, but if user is, return from filtered list
@@ -102,8 +107,17 @@ class FriendsTableViewController: UITableViewController {
             cell.friendName.text = facebookFriendsData[indexPath.row]["name"] as? String
         }
 
+        // set font weight for label
+        cell.friendName.font = UIFont(name: "Avenir Next", size: 42)
+        
+        // adjust properties of label
+        cell.friendName.adjustsFontSizeToFitWidth = true
+        
+        // return properly configured cell
         return cell
     }
+    
+    didSele
 }
 
 /* class extensions for search feature */
