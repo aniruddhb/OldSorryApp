@@ -12,7 +12,15 @@ import FBSDKCoreKit
 class FriendsTableViewController: UITableViewController {
     
     /* local variables */
+    
+    // full friend data holder
     var facebookFriendsData: [Dictionary<String, AnyObject>] = []
+    
+    // filtered friend data holder
+    var filteredFriendsData: [Dictionary<String, AnyObject>] = []
+    
+    // search controller
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         // load superview
@@ -23,6 +31,12 @@ class FriendsTableViewController: UITableViewController {
         
         // load stories
         loadFriendsIntoTableView()
+        
+        // define parameters for searchcontroller
+        searchController.searchResultsUpdater = self as? UISearchResultsUpdating
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        self.tableView.tableHeaderView = searchController.searchBar
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,18 +71,44 @@ class FriendsTableViewController: UITableViewController {
         }
     }
     
+    func filterFriendsContent(searchText: String, scope: String = "ALL") {
+        // filter all friends data into filtered list based on search text
+        filteredFriendsData = facebookFriendsData.filter({ (friendEntry: [String : AnyObject]) -> Bool in
+            return (friendEntry["name"]?.lowercaseString.containsString(searchText.lowercaseString))!
+        })
+        
+        // reload tableview
+        self.tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // return number of friends in local variable
+        // if search field is active and non-empty, return number of filtered friend results
+        if searchController.active && searchController.searchBar.text != "" {
+            return filteredFriendsData.count
+        }
+        
+        // otherwise, return number of friends
         return facebookFriendsData.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> FriendTableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as! FriendTableViewCell
 
-        // Configure the cell...
-        cell.friendName.text = facebookFriendsData[indexPath.row]["name"] as? String ?? "Friend failed to load"
+        // if user isn't searching, return data from full array, but if user is, return from filtered list
+        if searchController.active && searchController.searchBar.text != "" {
+            cell.friendName.text = filteredFriendsData[indexPath.row]["name"] as? String
+        } else {
+            cell.friendName.text = facebookFriendsData[indexPath.row]["name"] as? String
+        }
 
         return cell
+    }
+}
+
+/* class extensions for search feature */
+extension FriendsTableViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterFriendsContent(searchController.searchBar.text!)
     }
 }
