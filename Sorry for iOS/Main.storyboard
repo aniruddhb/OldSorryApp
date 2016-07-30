@@ -154,7 +154,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="friendName" destination="l2Q-av-Jll" id="ldj-vg-nJ0"/>
+                                    <outlet property="displayName" destination="l2Q-av-Jll" id="A0K-5o-inr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

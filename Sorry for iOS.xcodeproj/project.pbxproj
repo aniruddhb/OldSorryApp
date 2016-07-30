@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B61429001D3F446200D0C8F0 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61428FF1D3F446200D0C8F0 /* FriendTableViewCell.swift */; };
 		B61429021D3F470200D0C8F0 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61429011D3F470200D0C8F0 /* SwiftyJSON.swift */; };
 		B61B7B951D3DD38800A6C3CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B7B941D3DD38800A6C3CF /* LoginViewController.swift */; };
+		B65AE1C61D4D404100BE79B1 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C51D4D404100BE79B1 /* FriendTableViewCell.swift */; };
 		B675F4B21D3F1A1A0085BAF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B675F4B11D3F1A1A0085BAF8 /* Main.storyboard */; };
 		B675F4D21D3F1AA10085BAF8 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675F4B41D3F1AA10085BAF8 /* AsyncButton.swift */; };
 		B675F4D31D3F1AA10085BAF8 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675F4B51D3F1AA10085BAF8 /* AsyncImageView.swift */; };
@@ -40,6 +40,7 @@
 		B675F4EC1D3F1AA10085BAF8 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675F4CF1D3F1AA10085BAF8 /* TransitionManager.swift */; };
 		B675F4ED1D3F1AA10085BAF8 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675F4D01D3F1AA10085BAF8 /* TransitionZoom.swift */; };
 		B675F4EE1D3F1AA10085BAF8 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675F4D11D3F1AA10085BAF8 /* UnwindSegue.swift */; };
+		B6DEBAE71D40832200DC4D99 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DEBAE61D40832200DC4D99 /* Friend.swift */; };
 		B6F737EE1D3C5A7700F71A8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F737ED1D3C5A7700F71A8E /* AppDelegate.swift */; };
 		B6F737F51D3C5A7700F71A8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6F737F41D3C5A7700F71A8E /* Assets.xcassets */; };
 		B6F738001D3C5AFC00F71A8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F737FF1D3C5AFC00F71A8E /* LaunchScreen.storyboard */; };
@@ -51,9 +52,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B61428FF1D3F446200D0C8F0 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		B61429011D3F470200D0C8F0 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Spring/SwiftyJSON.swift; sourceTree = "<group>"; };
 		B61B7B941D3DD38800A6C3CF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B65AE1C51D4D404100BE79B1 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		B675F4B11D3F1A1A0085BAF8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B675F4B41D3F1AA10085BAF8 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		B675F4B51D3F1AA10085BAF8 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		B675F4CF1D3F1AA10085BAF8 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		B675F4D01D3F1AA10085BAF8 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		B675F4D11D3F1AA10085BAF8 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		B6DEBAE61D40832200DC4D99 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		B6F737EA1D3C5A7700F71A8E /* Sorry for iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sorry for iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F737ED1D3C5A7700F71A8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6F737F41D3C5A7700F71A8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,7 +184,8 @@
 			children = (
 				B675F4B31D3F1AA10085BAF8 /* Spring */,
 				B61429011D3F470200D0C8F0 /* SwiftyJSON.swift */,
-				B61428FF1D3F446200D0C8F0 /* FriendTableViewCell.swift */,
+				B65AE1C51D4D404100BE79B1 /* FriendTableViewCell.swift */,
+				B6DEBAE61D40832200DC4D99 /* Friend.swift */,
 				B675F4B11D3F1A1A0085BAF8 /* Main.storyboard */,
 				B6F7D4D21D3F1E7A00144638 /* FriendsTableViewController.swift */,
 				B6F737ED1D3C5A7700F71A8E /* AppDelegate.swift */,
@@ -283,12 +286,13 @@
 				B675F4E41D3F1AA10085BAF8 /* Spring.swift in Sources */,
 				B675F4E01D3F1AA10085BAF8 /* LoadingView.swift in Sources */,
 				B675F4E91D3F1AA10085BAF8 /* SpringTextField.swift in Sources */,
+				B65AE1C61D4D404100BE79B1 /* FriendTableViewCell.swift in Sources */,
 				B6F7D4D31D3F1E7A00144638 /* FriendsTableViewController.swift in Sources */,
-				B61429001D3F446200D0C8F0 /* FriendTableViewCell.swift in Sources */,
 				B675F4D61D3F1AA10085BAF8 /* DesignableButton.swift in Sources */,
 				B675F4DA1D3F1AA10085BAF8 /* DesignableTextField.swift in Sources */,
 				B675F4D21D3F1AA10085BAF8 /* AsyncButton.swift in Sources */,
 				B675F4DF1D3F1AA10085BAF8 /* KeyboardLayoutConstraint.swift in Sources */,
+				B6DEBAE71D40832200DC4D99 /* Friend.swift in Sources */,
 				B675F4E61D3F1AA10085BAF8 /* SpringButton.swift in Sources */,
 				B675F4D31D3F1AA10085BAF8 /* AsyncImageView.swift in Sources */,
 				B675F4D91D3F1AA10085BAF8 /* DesignableTabBarController.swift in Sources */,
